@@ -1,0 +1,208 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Club · The Rule of Law</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{color-scheme:light;--bg:#f6f6f8;--surface:#fff;--fg:#1d1d24;--muted:#5d5d6b;--line:#e3e3ea;--acc:#1f3f8f;--acc-soft:#e6ecf8;--gold:#8f6100;--gold-soft:#fff2d6;--green:#2a7148;--green-soft:#e3f2e9;--red:#b93a2a;--red-soft:#fce8e4}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--fg);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif;padding:22px 16px 60px}
+.wrap{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:1.15}
+h1{font-size:clamp(26px,6vw,36px);font-weight:800;color:var(--acc)}
+h2{font-size:21px;font-weight:800}
+p{margin:0}
+.eyebrow{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#b8432a}
+.lede{color:var(--muted)}
+.hud{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tab{font:600 14px "IBM Plex Sans",sans-serif;border:1px solid var(--line);background:#fff;color:var(--fg);border-radius:99px;padding:7px 12px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc)}
+.prog{margin-left:auto;font:600 13px "IBM Plex Mono",monospace;color:var(--green);background:var(--green-soft);border-radius:99px;padding:5px 11px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.panel{display:none;flex-direction:column;gap:16px}.panel.on{display:flex}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.hint{font-size:14px;color:var(--muted)}
+.rule{background:var(--acc-soft);border-radius:8px;padding:10px 12px;font-size:14.5px}
+.book{display:flex;gap:14px;align-items:center;background:#14182b;color:#eef1fb;border-radius:12px;padding:16px}
+.book .ic{font-size:40px}
+.book b{font:800 18px "Bricolage Grotesque",sans-serif;color:#ffd166}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}
+input[type=text],textarea{width:100%;font:15px/1.5 "IBM Plex Sans",sans-serif;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;color:var(--fg)}
+textarea{min-height:90px;resize:vertical}
+.wordrow{display:grid;grid-template-columns:1fr 1fr 2fr;gap:6px}
+@media (max-width:600px){.wordrow{grid-template-columns:1fr}}
+.wordrow+.wordrow{padding-top:8px;border-top:1px dashed var(--line)}
+.btn{font:600 15px "IBM Plex Sans",sans-serif;border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:8px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.ghost{background:#fff;color:var(--acc)}
+.btn.send{background:var(--green);border-color:var(--green);font-size:16px;padding:12px 18px}
+.q{display:flex;flex-direction:column;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.q .s{font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{font:15px "IBM Plex Sans",sans-serif;border:1px solid var(--line);background:#fff;color:var(--fg);border-radius:8px;padding:7px 12px;cursor:pointer}
+.opt.right{border-color:var(--green);background:var(--green-soft)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.why{font-size:14px;color:var(--green)}
+.res{font:600 15px "IBM Plex Sans",sans-serif}
+.finish{border:2px solid var(--green);background:#f4fbf6}
+.missing{font-size:14px;color:var(--red)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:#fff;padding:8px 14px;border-radius:8px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <div class="eyebrow">Homework · B2 · Reading Club · week 1</div>
+    <h1>⚖️ The Rule of Law: Chapter 1</h1>
+    <p class="lede">We're reading a real law book together, one chapter at a time. Do the 3 steps in order. Your answers are saved on this device. At the end, press <b>Send to my teacher</b>.</p>
+  </header>
+
+  <nav class="hud" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="s1">📖 1 Read</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="s2">📝 2 Log</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="s3">🧠 3 Check + send</button>
+    <span class="prog" id="prog">0/3 done</span>
+  </nav>
+
+  <!-- 1 READ -->
+  <section class="panel on" id="s1">
+    <div class="book"><span class="ic">📘</span><div><b>Tom Bingham, "The Rule of Law" (2010)</b><br>Read: <b>Chapter 1, "The Importance of the Rule of Law"</b></div></div>
+    <div class="card">
+      <h2>📖 Step 1: Read the chapter</h2>
+      <p>Lord Bingham was one of Britain's most respected judges. In this book he explains, for ordinary readers, why the rule of law matters and what it really means.</p>
+      <div class="rule"><b>How to read a real book in English:</b><br>
+      ① First read for the <b>main idea</b>. Don't stop at every new word.<br>
+      ② Then go back and underline <b>6 words or phrases</b> you want to learn.<br>
+      ③ If one paragraph is very hard, skip it, and write down which page it was. We'll look at it together.</div>
+      <p class="hint">💡 Keep this question in mind while you read: <b>"Why does Bingham think the rule of law is important for every citizen, not only for lawyers?"</b></p>
+      <div><button class="btn" type="button" id="readDone">✅ I've read the chapter</button></div>
+    </div>
+  </section>
+
+  <!-- 2 LOG -->
+  <section class="panel" id="s2">
+    <div class="card">
+      <h2>📝 Step 2: Reading log</h2>
+      <p><b>A) 6 new words or phrases.</b> Write the word, the Ukrainian translation, and the sentence from the book where you found it.</p>
+      <div id="words"></div>
+    </div>
+    <div class="card">
+      <label class="f">B) Bingham's main idea in 2–3 sentences, in your own words
+        <textarea id="mainIdea" placeholder="In Chapter 1, Bingham argues that…"></textarea></label>
+      <label class="f">C) One sentence you liked or disagree with: copy it, and explain why
+        <textarea id="quote" placeholder="&quot;…&quot; (page __). I agree / disagree because…"></textarea></label>
+      <label class="f">D) Page(s) that were too difficult (optional)
+        <input type="text" id="hard" placeholder="e.g. page 5, second paragraph"></label>
+    </div>
+  </section>
+
+  <!-- 3 CHECK + SEND -->
+  <section class="panel" id="s3">
+    <div class="card">
+      <h2>🧠 Step 3: Quick check</h2>
+      <div class="rule"><b>Perfect tenses = HAVE + V3, done before a checkpoint.</b><br>
+      <b>had</b> + V3 (before a past moment) · <b>has / have</b> + V3 (before now) · <b>will have</b> + V3 (before a future deadline)<br>
+      🕒 <b>Time Stamp Test:</b> yesterday / in 2010 / last week → Past Simple. Ever / yet / since / so far → Present Perfect.</div>
+      <h3 style="font:700 16px 'IBM Plex Sans',sans-serif">A) Perfect tenses</h3>
+      <div id="q1"></div>
+      <p class="res" id="r1" aria-live="polite"></p>
+      <h3 style="font:700 16px 'IBM Plex Sans',sans-serif">B) Law words</h3>
+      <div id="q2"></div>
+      <p class="res" id="r2" aria-live="polite"></p>
+    </div>
+    <div class="card finish">
+      <h2>📨 Finish: send to your teacher</h2>
+      <p>Your <b>email app</b> will open with all your answers already written in the message. Just press <b>Send</b>.</p>
+      <p class="missing" id="missing"></p>
+      <a class="btn send" id="send" href="#">📨 Send to my teacher</a>
+      <p class="hint">No email app on this device? Use this button instead, then paste the text into your chat with your teacher:</p>
+      <div><button class="btn ghost" type="button" id="copy">📋 Copy my answers</button></div>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  var TEACHER='darya.gladkyh@gmail.com';
+  var S={get:function(k){try{return localStorage.getItem('rol1_'+k);}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('rol1_'+k,v);}catch(e){}}};
+  var toast=document.getElementById('toast'),tid;
+  function show(m){toast.textContent=m;toast.hidden=false;clearTimeout(tid);tid=setTimeout(function(){toast.hidden=true;},2200);}
+  function $(id){return document.getElementById(id);}
+
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false');});t.setAttribute('aria-selected','true');document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===t.dataset.p);});window.scrollTo({top:0});});});
+
+  var W=$('words');
+  for(var i=0;i<6;i++){var r=document.createElement('div');r.className='wordrow';
+    r.innerHTML='<input type="text" aria-label="word '+(i+1)+'" placeholder="'+(i+1)+'. word / phrase"><input type="text" aria-label="translation '+(i+1)+'" placeholder="переклад"><input type="text" aria-label="sentence '+(i+1)+'" placeholder="sentence from the book">';
+    W.appendChild(r);}
+  var fields=[];W.querySelectorAll('input').forEach(function(el,i){el.dataset.k='w'+i;fields.push(el);});
+  ['mainIdea','quote','hard'].forEach(function(id){var el=$(id);el.dataset.k=id;fields.push(el);});
+  fields.forEach(function(el){var v=S.get(el.dataset.k);if(v)el.value=v;el.addEventListener('input',function(){S.set(el.dataset.k,el.value);update();});});
+
+  var readOk=S.get('read')==='1';
+  $('readDone').addEventListener('click',function(){readOk=true;S.set('read','1');this.textContent='✅ Done! Now go to step 2';update();});
+  if(readOk)$('readDone').textContent='✅ Done! Now go to step 2';
+
+  var qs={q1:{right:0,done:0,n:0},q2:{right:0,done:0,n:0}};
+  function quiz(el,res,Q){var box=$(el);qs[el].n=Q.length;
+    Q.forEach(function(q){var d=document.createElement('div');d.className='q';var s=document.createElement('div');s.className='s';s.textContent=q[0];d.appendChild(s);var o=document.createElement('div');o.className='opts';var why=document.createElement('div');why.className='why';
+      q[1].forEach(function(t,i){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;qs[el].done++;if(i===q[2]){b.classList.add('right');qs[el].right++;}else{b.classList.add('wrong');o.children[q[2]].classList.add('right');}why.textContent='💡 '+q[3];if(qs[el].done===Q.length)$(res).textContent='Result: '+qs[el].right+'/'+Q.length+(qs[el].right===Q.length?' 🏆':qs[el].right>=Q.length-2?' ✅':' 📚 read the 💡 explanations again');update();});o.appendChild(b);});
+      d.appendChild(o);d.appendChild(why);box.appendChild(d);});}
+  quiz('q1','r1',[
+    ["Bingham ___ \"The Rule of Law\" in 2010.",["wrote","has written","had written"],0,"2010 = a time stamp → Past Simple."],
+    ["I ___ the first chapter, so I'm ready for the lesson.",["read","have read","will have read"],1,"Result now (I'm ready) → Present Perfect."],
+    ["Before he wrote the book, Bingham ___ a judge for many years.",["was","has been","had been"],2,"Before a past moment (he wrote the book) → Past Perfect."],
+    ["By our next lesson, I ___ Chapter 2.",["will finish","will have finished","have finished"],1,"By + a future deadline → Future Perfect."],
+    ["___ you ever ___ a law book in English?",["Did … read","Have … read","Had … read"],1,"Experience, ever, no time stamp → Present Perfect."],
+    ["The court ___ its decision yesterday.",["announced","has announced","had announced"],0,"Yesterday = a time stamp → Past Simple."],
+    ["This is the first time I ___ about the rule of law in English.",["read","have read","had read"],1,"\"This is the first time…\" → always Present Perfect."],
+    ["When the journalists arrived, the judge ___ the courtroom.",["already left","has already left","had already left"],2,"He left BEFORE they arrived → Past Perfect."]
+  ]);
+  quiz('q2','r2',[
+    ["the rule of law",["nobody is above the law, not even the government","the rules of a sport","a law about rules"],0,"верховенство права"],
+    ["impartial",["very fast","not taking sides","very expensive"],1,"неупереджений: a judge must be impartial."],
+    ["arbitrary",["without a good legal reason","by a jury","written in the constitution"],0,"свавільний: arbitrary arrest = арешт без законних підстав."],
+    ["presumed innocent",["already in prison","considered not guilty until it's proved","a witness"],1,"презумпція невинуватості"],
+    ["evidence",["a decision of the jury","facts that show something is true","a lawyer"],1,"докази (uncountable: no 'evidences'!)"],
+    ["a verdict",["the final decision: guilty or not guilty","a type of judge","a new law"],0,"вердикт"]
+  ]);
+
+  function wordsDone(){return [].slice.call(W.querySelectorAll('input')).filter(function(x,i){return i%3===0&&x.value.trim();}).length;}
+  function steps(){return [readOk, wordsDone()>=6&&$('mainIdea').value.trim().length>20, qs.q1.done===qs.q1.n&&qs.q2.done===qs.q2.n];}
+  function update(){
+    var st=steps();$('prog').textContent=st.filter(Boolean).length+'/3 done';
+    var miss=[];if(!st[0])miss.push('step 1 (press "I\'ve read the chapter")');if(!st[1])miss.push('step 2 (6 words + main idea)');if(!st[2])miss.push('step 3 (all questions)');
+    $('missing').textContent=miss.length?'Not finished yet: '+miss.join(', ')+'. You can still send, but try to finish first 🙂':'';
+    $('send').href='mailto:'+TEACHER+'?subject='+encodeURIComponent('Ostap: The Rule of Law, Chapter 1 (homework)')+'&body='+encodeURIComponent(report());
+  }
+  function report(){
+    var wl=[];W.querySelectorAll('.wordrow').forEach(function(r,i){var x=r.querySelectorAll('input');if(x[0].value.trim())wl.push((i+1)+'. '+x[0].value+' = '+x[1].value+' | "'+x[2].value+'"');});
+    return 'THE RULE OF LAW, Chapter 1: homework\nProgress: '+$('prog').textContent+
+      '\n\nRESULTS\nPerfect tenses: '+qs.q1.right+'/'+qs.q1.n+(qs.q1.done<qs.q1.n?' (not finished)':'')+
+      '\nLaw words: '+qs.q2.right+'/'+qs.q2.n+(qs.q2.done<qs.q2.n?' (not finished)':'')+
+      '\n\nNEW WORDS:\n'+(wl.join('\n')||'-')+
+      '\n\nMAIN IDEA:\n'+($('mainIdea').value||'-')+
+      '\n\nQUOTE + MY OPINION:\n'+($('quote').value||'-')+
+      '\n\nDIFFICULT PAGES: '+($('hard').value||'-');
+  }
+  update();
+
+  $('send').addEventListener('click',function(){update();show('Your email app is opening… press Send there 📨');});
+  $('copy').addEventListener('click',function(){
+    var txt=report(),p=null;try{p=navigator.clipboard&&navigator.clipboard.writeText(txt);}catch(e){p=null;}
+    if(p&&p.then){p.then(function(){show('Copied ✓ Now paste it to your teacher');},function(){fb(txt);});}else fb(txt);
+  });
+  function fb(t){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');show('Copied ✓');}catch(e){show('Please select and copy manually');}document.body.removeChild(ta);}
+})();
+</script>
+</body>
+</html>
+
+</body></html>
